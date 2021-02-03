@@ -8,6 +8,10 @@ p {
     display: none;
 }
 
+a {
+    display: none;
+}
+
 @media (prefers-color-scheme: dark) {
     body {
         background-color: black;
@@ -69,5 +73,14 @@ p {
 @media (orientation: portrait) {
     section:nth-child(5) p:nth-child(1) {
         display: block;
+    }
+}
+
+@media print {
+    a {
+        display: block;
+    }
+    p {
+        display: none!important;
     }
 }
