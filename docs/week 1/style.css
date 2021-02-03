@@ -12,6 +12,7 @@ a {
     display: none;
 }
 
+/*check if user has dark or light theme*/
 @media (prefers-color-scheme: dark) {
     body {
         background-color: black;
@@ -22,8 +23,12 @@ a {
     p {
         color: white;
     }
+    h2 {
+        color: white;
+    }
     section:nth-child(2) p:first-child {
         display: block;
+        color: white;
     }
 }
 
@@ -38,8 +43,12 @@ a {
         display: block;
         color: black;
     }
+    h2 {
+        color: black;
+    }
 }
 
+/*check if user had motion rediction prefrences*/
 @media (prefers-reduced-motion: reduce) {
     section:nth-child(3) p:first-child {
         display: block;
@@ -52,6 +61,7 @@ a {
     }
 }
 
+/*check the type of cursor the user has, touch or mouse/trackpad*/
 @media (hover: none) and (pointer: coarse) {
     section:nth-child(4) p:nth-child(1) {
         display: block;
@@ -64,6 +74,7 @@ a {
     }
 }
 
+/*check the user's screen orientation*/
 @media (orientation: landscape) {
     section:nth-child(5) p:nth-child(1) {
         display: block;
@@ -76,11 +87,12 @@ a {
     }
 }
 
+/*check media type print*/
 @media print {
     a {
         display: block;
     }
-    p {
+    p, h1, h2 {
         display: none!important;
     }
 }
