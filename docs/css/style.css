@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    overflow-x: hidden;
 }
 
 
@@ -33,6 +34,7 @@ main section {
     justify-content: center;
     align-items: center;
     position: static;
+    padding: 2em 0 5em 0;
 }
 
 main section:nth-child(even) {
@@ -41,8 +43,8 @@ main section:nth-child(even) {
 }
 
 main section article {
-    min-width: 30vw;
-    text-wrap: wrap;
+    width: 30vw;
+    overflow-wrap: break-word;
 }
 
 
