@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+}
+
+
+/*intro page*/
+body > header:first-of-type {
+    color: white;
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: static;
+}
+
+body > header:first-of-type h1 {
+    font-family: monospace;
+    position: relative;
+}
+
+body > header:first-of-type h1 span:last-of-type {
+    display: block;
+    transform: rotate(90deg);
+}
+
+
+/*general main styling*/
+main section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: static;
+}
+
+main section:nth-child(even) {
+    background-color: black;
+    color: white;
+}
+
+main section article {
+    min-width: 30vw;
+    text-wrap: wrap;
+}
+
+
+
+/*footer*/
+footer {
+    background-color: black;
+    color: white;
+    display: flex;
+    width: 100vw;
+}
+
+footer p,
+footer a {
+    font-size: 0.5em;
+    margin: 3em 3em
+}
+
+footer a,
+footer a:visited {
+    color: white;
+    text-decoration: none;
+}

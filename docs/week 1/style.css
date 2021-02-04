@@ -1,7 +1,10 @@
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+
+main {
+    grid-column-start: 2;
 }
 
 p {
@@ -15,36 +18,35 @@ a {
 /*check if user has dark or light theme*/
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: black;
+        background-image: url(images/night.jpg);
+        background-size: auto;
     }
-    h1 {
-        color: white;
-    }
-    p {
-        color: white;
-    }
-    h2 {
+    h1, h2, p {
         color: white;
     }
     section:nth-child(2) p:first-child {
         display: block;
-        color: white;
+    }
+
+    body:nth-child(2) {
+        display: block;
     }
 }
 
 @media (prefers-color-scheme: light) {
     body {
-        background-color: white;
+        background-image: url(images/day.jpg);
+        background-size: auto;
     }
-    h1 {
+    h1, h2, p {
         color: black;
     }
-    section:nth-child(2) p:nth-child(2) {
+    section:nth-child(3) p:nth-child(2) {
         display: block;
-        color: black;
     }
-    h2 {
-        color: black;
+
+    body:nth-child(2) {
+        display: none;
     }
 }
 
@@ -89,10 +91,10 @@ a {
 
 /*check media type print*/
 @media print {
-    a {
-        display: block;
-    }
-    p, h1, h2 {
+    p, h1, h2, img {
         display: none!important;
+    }
+    section:nth-child(6) p {
+        display: block!important;
     }
 }
