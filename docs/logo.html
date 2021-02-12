@@ -7,86 +7,74 @@
         Warped Text
     </title>
     <style type='text/css'>
-        #warped {position: relative; display: block; width:815px; height:574px;}
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
 
-        #warped>span[class^=w]:nth-of-type(n+0){display:block; position:absolute;
-            -moz-transform-origin:50% 100%; -webkit-transform-origin:50% 100%; -o-transform-origin:50%
-        100%; -ms-transform-origin:50% 100%; transform-origin:50% 100%; }
+        }
+        svg {
+            width: 50em;
+            height: 30em;
+        }
+        path {
+            align-items: center;
+            stroke:black;
+            fill:none;
+            overflow: visible;
+        }
 
-        #warped span{font-family:'ABeeZee';font-size:38px;font-weight:regular;font-style:normal;
-            line-height:0.65; white-space:pre; overflow:visible; padding:0px;}
+        @keyframes move {
+            /*looping animation text moving around rectangle*/
+            from {
+                /*starting position left upper corner*/
 
-        #warped .w0 {-moz-transform: rotate(-6.13rad);-webkit-transform: rotate(-6.13rad);-o-transform:
-                rotate(-6.13rad);-ms-transform: rotate(-6.13rad); transform: rotate(-6.13rad);
-            width: 25px; height: 24px; left: 189.57px; top: 156.01px;}
+            }
+            to {
+                /*end position left upper corner*/
 
-        #warped .w1 {-moz-transform: rotate(-6.3rad);-webkit-transform: rotate(-6.3rad);-o-transform:
-                rotate(-6.3rad);-ms-transform: rotate(-6.3rad); transform: rotate(-6.3rad);
-            width: 19px; height: 24px; left: 219.65px; top: 156.52px;}
+            }
+        }
+        @keyframes moving {
+            0% {
+                offset-distance: 0%;
+            }
+            100% {
+                offset-distance: 100%;
+            }
+        }
 
-        #warped .w2 {-moz-transform: rotate(-6.3rad);-webkit-transform: rotate(-6.3rad);-o-transform:
-                rotate(-6.3rad);-ms-transform: rotate(-6.3rad); transform: rotate(-6.3rad);
-            width: 15px; height: 24px; left: 243.89px; top: 156.28px;}
+        svg text {
+            overflow: visible;
 
-        #warped .w3 {-moz-transform: rotate(-6.3rad);-webkit-transform: rotate(-6.3rad);-o-transform:
-                rotate(-6.3rad);-ms-transform: rotate(-6.3rad); transform: rotate(-6.3rad);
-            width: 15px; height: 24px; left: 263.55px; top: 156.01px;}
+        }
+        /*start animation on hover, infinit loop*/
+        svg:hover text {
+            animation-name: moving;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-timing-function:linear;
+            offset-path: path('M20,20H280V180H20V20H280V180H20V20z');
+        }
 
-        #warped .w4 {-moz-transform: rotate(-6.3rad);-webkit-transform: rotate(-6.3rad);-o-transform:
-                rotate(-6.3rad);-ms-transform: rotate(-6.3rad); transform: rotate(-6.3rad);
-            width: 10px; height: 24px; left: 283.93px; top: 155.76px;}
 
-        #warped .w5 {-moz-transform: rotate(-6.3rad);-webkit-transform: rotate(-6.3rad);-o-transform:
-                rotate(-6.3rad);-ms-transform: rotate(-6.3rad); transform: rotate(-6.3rad);
-            width: 30px; height: 24px; left: 298.49px; top: 155.44px;}
-
-        #warped .w6 {-moz-transform: rotate(-6.3rad);-webkit-transform: rotate(-6.3rad);-o-transform:
-                rotate(-6.3rad);-ms-transform: rotate(-6.3rad); transform: rotate(-6.3rad);
-            width: 10px; height: 24px; left: 333.89px; top: 155.13px;}
-
-        #warped .w7 {-moz-transform: rotate(-6.3rad);-webkit-transform: rotate(-6.3rad);-o-transform:
-                rotate(-6.3rad);-ms-transform: rotate(-6.3rad); transform: rotate(-6.3rad);
-            width: 19px; height: 24px; left: 348.52px; top: 154.92px;}
-
-        #warped .w8 {-moz-transform: rotate(-6.3rad);-webkit-transform: rotate(-6.3rad);-o-transform:
-                rotate(-6.3rad);-ms-transform: rotate(-6.3rad); transform: rotate(-6.3rad);
-            width: 17px; height: 24px; left: 372.96px; top: 154.7px;}
-
-        #warped .w9 {-moz-transform: rotate(-6.3rad);-webkit-transform: rotate(-6.3rad);-o-transform:
-                rotate(-6.3rad);-ms-transform: rotate(-6.3rad); transform: rotate(-6.3rad);
-            width: 19px; height: 24px; left: 395.14px; top: 154.51px;}
-
-        #warped .w10 {-moz-transform: rotate(-6.29rad);-webkit-transform: rotate(-6.29rad);-o-transform:
-                rotate(-6.29rad);-ms-transform: rotate(-6.29rad); transform: rotate(-6.29rad);
-            width: 19px; height: 24px; left: 418.81px; top: 154.35px;}
-
-        #warped .w11 {-moz-transform: rotate(-6.29rad);-webkit-transform: rotate(-6.29rad);-o-transform:
-                rotate(-6.29rad);-ms-transform: rotate(-6.29rad); transform: rotate(-6.29rad);
-            width: 19px; height: 24px; left: 442.77px; top: 154.21px;}
-
-        #warped .w12 {-moz-transform: rotate(-6.29rad);-webkit-transform: rotate(-6.29rad);-o-transform:
-                rotate(-6.29rad);-ms-transform: rotate(-6.29rad); transform: rotate(-6.29rad);
-            width: 11px; height: 24px; left: 467.18px; top: 154.13px;}
-
-        #warped .w13 {-moz-transform: rotate(-6.29rad);-webkit-transform: rotate(-6.29rad);-o-transform:
-                rotate(-6.29rad);-ms-transform: rotate(-6.29rad); transform: rotate(-6.29rad);
-            width: 17px; height: 24px; left: 482.94px; top: 154.07px;}
-
-        #warped .w14 {-moz-transform: rotate(-6.29rad);-webkit-transform: rotate(-6.29rad);-o-transform:
-                rotate(-6.29rad);-ms-transform: rotate(-6.29rad); transform: rotate(-6.29rad);
-            width: 13px; height: 24px; left: 505.74px; top: 154.02px;}
-
-        #warped .w15 {-moz-transform: rotate(-6.29rad);-webkit-transform: rotate(-6.29rad);-o-transform:
-                rotate(-6.29rad);-ms-transform: rotate(-6.29rad); transform: rotate(-6.29rad);
-            width: 15px; height: 24px; left: 523.62px; top: 154px;}
 
     </style>
 </head>
 
 <body>
-<div id='warped'>
-    <span class='w0'>R</span><span class='w1'>u</span><span class='w2'>s</span><span class='w3'>s</span><span class='w4'> </span><span class='w5'>&</span><span class='w6'> </span><span class='w7'>d</span><span class='w8'>a</span><span class='w9'>u</span><span class='w10'>g</span><span class='w11'>h</span><span class='w12'>t</span><span class='w13'>e</span><span class='w14'>r</span><span class='w15'>s</span>
-</div>
+
+    <svg>
+        <path id="the_rect" d="M20,20H280V180H20V20H280V180H20V20z" />
+        <text>
+            <textPath xlink:href="#the_rect">
+                Russ & daughtersRuss & daughtersRuss & daughtersRuss & daughters Russ & daughters
+            </textPath>
+        </text>
+    </svg>
+
+    <!--<div class="movingText">Russ and daughter</div>-->
 </body>
 
 </html>
