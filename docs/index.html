@@ -12,10 +12,20 @@
 <body>
 
 <header>
-    <h1><span>Russ</span> <span>&</span> <span>Daughters</span></h1>
+    <svg >
+    <!--defs is used to store variables-->
+    <defs>
+        <path id="shape" d="M20,20H280V130H20Z" />
+    </defs>
+    <text>
+        <textPath xlink:href="#shape" >Russ &amp;  Daughters
+            <animate attributeName="startOffset" from="0" to="650" dur="5s" repeatCount="indefinite" />
+        </textPath>
+    </text>
+    </svg>
     <p>appetizing since 1924</p>
-
 </header>
+
 
 <main>
 
@@ -28,7 +38,7 @@
         <article>
             <h3>Russ &amp;  Daughters Knishes</h3>
             <p>Potato, carmelized onion, mustard</p>
-            <div>8</div> <!-- price -->
+            <div>8</div>
         </article>
 
         <article>

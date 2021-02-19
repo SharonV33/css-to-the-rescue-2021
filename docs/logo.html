@@ -18,45 +18,6 @@
             width: 50em;
             height: 30em;
         }
-        path {
-            align-items: center;
-            stroke:black;
-            fill:none;
-            overflow: visible;
-        }
-
-        @keyframes move {
-            /*looping animation text moving around rectangle*/
-            from {
-                /*starting position left upper corner*/
-
-            }
-            to {
-                /*end position left upper corner*/
-
-            }
-        }
-        @keyframes moving {
-            0% {
-                offset-distance: 0%;
-            }
-            100% {
-                offset-distance: 100%;
-            }
-        }
-
-        svg text {
-            overflow: visible;
-
-        }
-        /*start animation on hover, infinit loop*/
-        svg:hover text {
-            animation-name: moving;
-            animation-duration: 5s;
-            animation-iteration-count: infinite;
-            animation-timing-function:linear;
-            offset-path: path('M20,20H280V180H20V20H280V180H20V20z');
-        }
 
 
 
@@ -64,17 +25,17 @@
 </head>
 
 <body>
-
-    <svg>
-        <path id="the_rect" d="M20,20H280V180H20V20H280V180H20V20z" />
+    <svg >
+        <!--defs is used to store variables-->
+        <defs>
+            <path id="shape" d="M20,20H280V130H20Z" />
+        </defs>
         <text>
-            <textPath xlink:href="#the_rect">
-                Russ & daughtersRuss & daughtersRuss & daughtersRuss & daughters Russ & daughters
+            <textPath xlink:href="#shape"> Russ & daughters
+                <animate attributeName="startOffset" from="0" to="650" dur="5s" repeatCount="indefinite" />
             </textPath>
         </text>
     </svg>
-
-    <!--<div class="movingText">Russ and daughter</div>-->
 </body>
 
 </html>
