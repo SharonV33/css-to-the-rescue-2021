@@ -57,9 +57,29 @@ footer a:visited {
         justify-content: center;
     }
 
+    main section:nth-child(even) {
+        background-color: white;
+        color: black;
+        transition: background-color 5s ease-in-out;
+    }
+
+    main section:nth-child(even):hover {
+        background-color: black;
+        color: white;
+        transition: background-color 5s ease-in-out;
+    }
+
     main section:nth-child(odd) {
         background-color: black;
         color: white;
+        transition: background-color 5s ease-in-out;
+    }
+
+    main section:nth-child(odd):hover {
+        background-color: white;
+        color: black;
+        transition: background-color 5s ease-in-out;
+
     }
 
     /*single menu section*/
@@ -157,6 +177,8 @@ footer a:visited {
 
         /*background-color: pink;*/
     }
+
+    /*animations in footer*/
 
     /*create print style, same general layout
     but each menu section gets a full A4*/
