@@ -13,14 +13,26 @@ footer {
 
 footer p,
 footer a {
+    text-transform: uppercase;
     font-size: 0.5em;
-    margin: 3em 3em
+    margin: 3em 3em;
+    animation: glow 2s ease-in-out infinite alternate;
 }
 
 footer a,
 footer a:visited {
     color: white;
     text-decoration: none;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px white;
+    }
+    to {
+        text-shadow: 0 0 20px white,
+        0 0 10px white;
+    }
 }
 
 /*regular styling for light theme/non drunk mode*/
@@ -63,13 +75,13 @@ footer a:visited {
         transition: background-color 5s ease-in-out;
     }
 
-    main section:nth-child(even):hover {
+    main section:nth-child(odd) {
         background-color: black;
         color: white;
         transition: background-color 5s ease-in-out;
     }
 
-    main section:nth-child(odd) {
+    main section:nth-child(even):hover {
         background-color: black;
         color: white;
         transition: background-color 5s ease-in-out;
@@ -79,7 +91,6 @@ footer a:visited {
         background-color: white;
         color: black;
         transition: background-color 5s ease-in-out;
-
     }
 
     /*single menu section*/
@@ -149,7 +160,7 @@ footer a:visited {
 
     main section article:nth-child(6) {
         grid-row: 1;
-        grid-column: 1 /  span 5;
+        grid-column: 1 / span 5;
 
         /*background-color: orange;*/
     }
@@ -176,29 +187,6 @@ footer a:visited {
         transform: rotate(180deg);
 
         /*background-color: pink;*/
-    }
-
-    /*animations in footer*/
-
-    /*create print style, same general layout
-    but each menu section gets a full A4*/
-    @media print and (prefers-color-scheme: light) {
-
-        body {
-            color: #000000;
-        }
-
-        body > header:first-of-type {
-            height: 1250px;
-        }
-
-        main section {
-            height: 1250px;
-        }
-
-        footer {
-            display: none;
-        }
     }
 }
 
@@ -249,24 +237,26 @@ larger text in an easier to read format*/
         text-overflow: ellipsis;
         margin: 0 0.5em;
     }
+}
 
-    /*print style*/
-    @media print and (prefers-color-scheme: dark) {
+/*create print style, same general layout
+   but each menu section gets a full A4*/
+@media print {
 
-        body {
-            color: #000000;
-        }
+    body {
+        color: #000000;
+    }
 
-        body > header:first-of-type {
-            height: 1250px;
-        }
+    body > header {
+        height: 1000px;
+    }
 
-        main section {
-            height: 1250px;
-        }
+    main section {
+        display: flex;
+        flex-direction: column;
+    }
 
-        footer {
-            display: none;
-        }
+    footer {
+        display: none;
     }
 }
