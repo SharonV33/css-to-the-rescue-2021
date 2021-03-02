@@ -233,10 +233,18 @@ footer span:hover a {
         color: white;
     }
 
-    body > header:first-of-type {
+    body > header {
         width: 100vw;
         text-align: center;
         font-size: 3em;
+    }
+
+    body > header svg {
+        display: none;
+    }
+
+    body > header p:first-of-type {
+        display: block;
     }
 
     main {
