@@ -68,7 +68,7 @@ footer span:hover a {
 
     /*intro page*/
 
-    body > header:first-of-type {
+    body > header {
         color: black;
         background-color: white;
         height: 100vh;
@@ -78,7 +78,7 @@ footer span:hover a {
         align-items: center;
     }
 
-    body > header:first-of-type svg {
+    body > header svg {
         align-self: center;
         font-family: monospace;
         position: relative;
@@ -86,7 +86,7 @@ footer span:hover a {
         height: 40vh;
     }
 
-    body > header:first-of-type svg path {
+    body > header svg path {
         height: 50vh;
     }
 
