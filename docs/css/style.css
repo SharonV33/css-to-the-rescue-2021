@@ -64,7 +64,7 @@ footer span:hover a {
 /*regular styling for light theme/non drunk mode*/
 /*----------------------------------------------*/
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
 
     /*intro page*/
 
@@ -226,7 +226,7 @@ footer span:hover a {
      larger text in an easier to read format*/
 /*----------------------------------------------*/
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
 
     body {
         background-color: black;
