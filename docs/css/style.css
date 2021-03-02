@@ -8,27 +8,34 @@ body header p:first-of-type {
     display: none;
 }
 
-/*footer*/
+/*footer styling*/
 footer {
     background-color: black;
     color: white;
     display: flex;
 }
 
-footer p,
-footer a {
+footer span a,
+footer span a:visited {
+    color: white;
+    text-decoration: none;
+    display: flex;
+}
+
+footer span p,
+footer span a {
     text-transform: uppercase;
     font-size: 0.5em;
     margin: 3em 3em;
     animation: glow 2s ease-in-out infinite alternate;
 }
 
-footer a,
-footer a:visited {
-    color: white;
-    text-decoration: none;
+footer span:first-of-type:hover p,
+footer span:hover a {
+    animation: bounce 1s infinite;
 }
 
+/*glowing effect*/
 @keyframes glow {
     from {
         text-shadow: 0 0 10px white;
@@ -39,10 +46,28 @@ footer a:visited {
     }
 }
 
+/*bounce effect*/
+@keyframes bounce {
+    0% {
+        transform:translateY(0);
+        animation-timing-function: ease-out;
+    }
+    50% {
+        transform:translateY(-10px);
+        animation-timing-function: ease-in;
+    }
+    100% {
+        transform:translateY(0);
+    }
+}
+/*----------------------------------------------*/
 /*regular styling for light theme/non drunk mode*/
+/*----------------------------------------------*/
+
 @media (prefers-color-scheme: dark) {
 
     /*intro page*/
+
     body > header:first-of-type {
         color: black;
         background-color: white;
@@ -66,6 +91,7 @@ footer a:visited {
     }
 
     /*general main styling*/
+
     main {
         width: 100vw;
         display: flex;
@@ -195,8 +221,11 @@ footer a:visited {
     }
 }
 
-/*dark mode/drunk mode
-larger text in an easier to read format*/
+/*----------------------------------------------*/
+            /*dark mode/drunk mode
+     larger text in an easier to read format*/
+/*----------------------------------------------*/
+
 @media (prefers-color-scheme: light) {
 
     body {
@@ -244,8 +273,10 @@ larger text in an easier to read format*/
     }
 }
 
-/*create print style, same general layout
-   but each menu section gets a full A4*/
+/*----------------------------------------------*/
+    /*create print style, same general layout
+       but each menu section gets a full A4*/
+/*----------------------------------------------*/
 @media print {
 
     body {
@@ -253,7 +284,8 @@ larger text in an easier to read format*/
     }
 
     body > header {
-        height: 1000px;
+        page-break-after: always;
+        page-break-before: always;
     }
 
     body header svg {
@@ -267,6 +299,17 @@ larger text in an easier to read format*/
     main section {
         display: flex;
         flex-direction: column;
+    }
+
+    main section header {
+        position: relative;
+        display: block;
+        page-break-after: always;
+        page-break-before: always;
+    }
+
+    main section article {
+        page-break-inside: avoid;
     }
 
     footer {
