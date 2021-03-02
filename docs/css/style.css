@@ -4,6 +4,10 @@ body {
     overflow-x: hidden;
 }
 
+body header p:first-of-type {
+    display: none;
+}
+
 /*footer*/
 footer {
     background-color: black;
@@ -95,9 +99,9 @@ footer a:visited {
 
     /*single menu section*/
     main section {
-        padding: 1em;
+        padding: 0em;
         display: grid;
-        grid-template-columns: 1fr 1fr 5fr 1fr 1fr;
+        grid-template-columns: 1fr 2fr 6fr 2fr 1fr;
         grid-template-rows: 1fr 1fr 5fr 1fr 1fr;
     }
 
@@ -169,6 +173,7 @@ footer a:visited {
         grid-column-start: 5;
         grid-row: 2 / span 4;
         writing-mode: vertical-rl;
+        justify-self: start;
 
         /*background-color: green;*/
     }
@@ -249,6 +254,14 @@ larger text in an easier to read format*/
 
     body > header {
         height: 1000px;
+    }
+
+    body header svg {
+        display: none;
+    }
+
+    body header p:first-of-type {
+        display: block;
     }
 
     main section {
