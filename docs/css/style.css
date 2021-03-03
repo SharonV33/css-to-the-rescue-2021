@@ -68,7 +68,7 @@ footer span:hover a {
 
     /*intro page*/
 
-    body > header {
+    body > header:first-of-type {
         color: black;
         background-color: white;
         height: 100vh;
@@ -78,7 +78,7 @@ footer span:hover a {
         align-items: center;
     }
 
-    body > header svg {
+    body > header:first-of-type svg {
         align-self: center;
         font-family: monospace;
         position: relative;
@@ -86,7 +86,7 @@ footer span:hover a {
         height: 40vh;
     }
 
-    body > header svg path {
+    body > header:first-of-type svg path {
         height: 50vh;
     }
 
@@ -233,18 +233,10 @@ footer span:hover a {
         color: white;
     }
 
-    body > header {
+    body > header:first-of-type {
         width: 100vw;
         text-align: center;
         font-size: 3em;
-    }
-
-    body > header svg {
-        display: none;
-    }
-
-    body > header p:first-of-type {
-        display: block;
     }
 
     main {
@@ -288,12 +280,13 @@ footer span:hover a {
 @media print {
 
     body {
-        color: #000000;
+        color: black;
     }
 
     body > header {
         page-break-after: always;
         page-break-before: always;
+        font-size: 4em;
     }
 
     body header svg {
@@ -307,17 +300,31 @@ footer span:hover a {
     main section {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex:1;
+        margin-bottom: 3em;
+        background-color: white!important;
+        break-after: page;
+        break-before: page;
     }
 
     main section header {
-        position: relative;
+        color: #000000;
+        text-align: center;
         display: block;
-        page-break-after: always;
-        page-break-before: always;
+        width: auto;
     }
 
     main section article {
+        color: #000000;
         page-break-inside: avoid;
+        writing-mode: lr!important;
+        transform: none!important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: normal;
+        width: auto;
     }
 
     footer {
